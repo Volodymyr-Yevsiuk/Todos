@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Volodymyr-Yevsiuk/Todos/static/css/main.6086e908.chunk.css",
+    "main.js": "/Volodymyr-Yevsiuk/Todos/static/js/main.a2139c75.chunk.js",
+    "main.js.map": "/Volodymyr-Yevsiuk/Todos/static/js/main.a2139c75.chunk.js.map",
+    "runtime-main.js": "/Volodymyr-Yevsiuk/Todos/static/js/runtime-main.6dd4f92c.js",
+    "runtime-main.js.map": "/Volodymyr-Yevsiuk/Todos/static/js/runtime-main.6dd4f92c.js.map",
+    "static/js/2.60c56765.chunk.js": "/Volodymyr-Yevsiuk/Todos/static/js/2.60c56765.chunk.js",
+    "static/js/2.60c56765.chunk.js.map": "/Volodymyr-Yevsiuk/Todos/static/js/2.60c56765.chunk.js.map",
+    "index.html": "/Volodymyr-Yevsiuk/Todos/index.html",
+    "precache-manifest.b23f2e27fe24c99158df7c8ed23d94bd.js": "/Volodymyr-Yevsiuk/Todos/precache-manifest.b23f2e27fe24c99158df7c8ed23d94bd.js",
+    "service-worker.js": "/Volodymyr-Yevsiuk/Todos/service-worker.js",
+    "static/css/main.6086e908.chunk.css.map": "/Volodymyr-Yevsiuk/Todos/static/css/main.6086e908.chunk.css.map",
+    "static/js/2.60c56765.chunk.js.LICENSE.txt": "/Volodymyr-Yevsiuk/Todos/static/js/2.60c56765.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6dd4f92c.js",
+    "static/js/2.60c56765.chunk.js",
+    "static/css/main.6086e908.chunk.css",
+    "static/js/main.a2139c75.chunk.js"
+  ]
+}
