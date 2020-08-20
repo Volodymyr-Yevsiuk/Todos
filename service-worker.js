@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Volodymyr-Yevsiuk/Todos/precache-manifest.b23f2e27fe24c99158df7c8ed23d94bd.js"
+  "/Volodymyr-Yevsiuk/Todos/precache-manifest.d6b60cb2aa890f503b9dc3009d7d80f1.js"
 );
 
 self.addEventListener('message', (event) => {
