@@ -11,7 +11,14 @@
     display: inline-block;
     width: 30px;
     height: 30px;
-    background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23ededed%22%20stroke-width%3D%223%22/%3E%3C/svg%3E');
+    margin: 15px 0;
+    margin-left: 15px;
+}
+
+.checked-label{
+    text-decoration: line-through;
+    color: #777;
+    transition: .3s;
 }
 
 /* label{
@@ -44,9 +51,11 @@ label::before{
 }
 
 .styled-div{
+    display: flex;
     width: 90%;
     justify-content: space-between;
     padding-left: 15px;
+    margin: 15px 15px;
 }
 
 .fa-times{
@@ -65,4 +74,24 @@ label::before{
     cursor:pointer;
 }
 
+.edit{
+    display: none;
+}
+
+.list-group li.editing .edit{
+    display: block;
+	width: 506px;
+	padding: 12px 16px;
+	margin: 0 0 0 43px;
+}
+
+.list-group li.editing .styled-div,
+.list-group li.editing .radio
+{
+    display: none;
+}
+
+.list-group-item{
+    padding: 0;
+}
 

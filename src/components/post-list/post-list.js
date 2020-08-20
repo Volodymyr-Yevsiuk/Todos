@@ -18,10 +18,12 @@ const PostList = ({posts, onDeleteItem}) => {
         )
     });
 
+    const number = elements.length;
+
     return (
         <ul className="list-group">
             {elements}
-            <PostListFilter/>
+            <PostListFilter number={number}/>
         </ul>
     )
 };
