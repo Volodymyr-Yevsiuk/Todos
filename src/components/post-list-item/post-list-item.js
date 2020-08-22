@@ -16,17 +16,18 @@ export default class PostListItem extends Component{
 
     addingClass = (e) => {
         const {target} = e;
-        if (target && target.classList.contains('post-item') || target.parentNode.classList.contains('post-item')) {
-            // console.log(target)
+        if (target && target.classList.contains('post-item')) {
             target.classList.add('editing');
         } 
     }
 
     removingClass = (e) => {
-        const {target} = e;
-        if (target){
-            target.classList.remove('editing');
-        }
+        const target = document.querySelectorAll('.post-item');
+        target.forEach(item => {
+            if (e.keyCode === 13) {
+                item.classList.remove('editing');
+            }
+        })     
     }
 
     onLabelChange = (e) => {
@@ -36,20 +37,20 @@ export default class PostListItem extends Component{
     }
 
     render () {
-        const {label, onDeleteItem} = this.props;
+        const {onDeleteItem, onCompleted} = this.props;
         const {x, newLabel} = this.state;
         const checkedLabel = x === true ? 'checked-label' : '';
 
         return (
             <li 
                 className="post-item list-group-item "
-                onDoubleClick={this.addingClass}
-                onClick={this.removingClass}>
+                onDoubleClick={this.addingClass}>
                 <input 
                     id="check"
                     type="checkbox" 
                     className="radio"
                     onChange={() => this.onTransformLabel(x)}
+                    onClick={onCompleted}
                     checked={x}/>
                 <label htmlFor="check"></label>
                 <div className="styled-div">
@@ -64,6 +65,7 @@ export default class PostListItem extends Component{
                     type="text" 
                     value={newLabel}
                     onChange={this.onLabelChange}
+                    onKeyDown={this.removingClass}
                     />
             </li>
         )   

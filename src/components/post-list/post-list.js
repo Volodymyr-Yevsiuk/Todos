@@ -3,7 +3,7 @@ import PostListItem from '../post-list-item/post-list-item';
 import PostListFilter from '../post-list-filter';
 import './post-list.css';
 
-const PostList = ({posts, onDeleteItem}) => {
+const PostList = ({posts, onDeleteItem, number, filter, filterSelect, onCompleted}) => {
 
     const elements = posts.map((item) => {
         const {id, ...itemProps} = item;
@@ -12,20 +12,23 @@ const PostList = ({posts, onDeleteItem}) => {
             <div key={id}>
                 <PostListItem 
                     {...itemProps}
-                    onDeleteItem={ () => onDeleteItem(id)}/>
+                    onDeleteItem={ () => onDeleteItem(id)}                    onCompleted={ () => onCompleted(id)}/>
             </div>
                 
         )
     });
 
-    const number = elements.length;
-
     return (
         <ul className="list-group">
             {elements}
-            <PostListFilter number={number}/>
+            <PostListFilter 
+                number={number}
+                filter={filter}
+                filterSelect={filterSelect}/>
         </ul>
     )
 };
 
 export default PostList;
+
+

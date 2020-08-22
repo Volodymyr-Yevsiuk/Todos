@@ -18,7 +18,7 @@
     height: 25px;
     font-size:14px;
     background-color: transparent;
-    border: 0px;
+    border: 1px solid white;
     color:#777;
     transition: .2s linear;
 }
@@ -30,4 +30,8 @@
 
 .mt-two-px{
     margin-top: 2px;
+}
+
+.btn-active{
+    border: 1px solid #000
 }

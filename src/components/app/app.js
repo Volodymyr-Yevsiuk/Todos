@@ -9,12 +9,16 @@ import { Component } from 'react';
 export default class App extends Component{
 
     state = {
-        data: [{label: 'Hello', id: nextId()}]
+        data: [],
+        filter: 'all'
     }
+
 
     onAddItem = (body) => {
         const newItem = {
             label: body,
+            active: true,
+            completed: false,
             id: nextId()
         }
 
@@ -40,15 +44,49 @@ export default class App extends Component{
         })
     }   
 
+    filterSelect = (filter) => {
+        this.setState({filter});
+    }
+
+    filterPost = (items, filter) => {
+        if (filter === 'active') {
+            return items.filter(item => item.active);
+        } else if (filter === 'completed'){
+            return items.filter(item => item.completed);
+        } else {
+            return items; 
+        }
+    }
+
+    onCompleted = (id) => {
+        this.setState(({data}) => {
+            const index = data.findIndex(elem => elem.id === id);
+
+            const old = data[index];
+            const newItem = {...old, completed: !old.completed};
+
+            const newArr = [...data.slice(0, index), newItem, ...data.slice(index + 1)];
+            return {
+                data: newArr
+            }
+        });
+    }
+
     render () {
-        const {data} = this.state;
-        
+        const {data, filter} = this.state;
+        const allPosts = data.length;
+        const visiblePosts = this.filterPost(data, filter);
+
         return (
             <div className="app">
                 <PostAddForm onAdd={this.onAddItem}/>
                 <PostList 
-                    posts={data} 
-                    onDeleteItem={this.onDeleteItem}/>
+                    posts={visiblePosts} 
+                    onDeleteItem={this.onDeleteItem}
+                    number={allPosts}
+                    filter={filter}
+                    filterSelect={this.filterSelect}
+                    onCompleted={this.onCompleted}/>
             </div>
         )
     }
